@@ -1,4 +1,4 @@
-import * as contactsService from "../models/contacts/index.js";
+import * as contactsService from "../models/contacts.js";
 import { HttpError } from "../helpers/index.js";
 import { contactAddSchema, contactUpdateSchema } from "../schemas/contact-schemas.js";
 const getAll = async (req, res, next) => {
