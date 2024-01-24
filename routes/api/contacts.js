@@ -1,4 +1,5 @@
-const express = require('express')
+// const express = require('express')
+import express from "express";
 
 const router = express.Router()
 
@@ -22,4 +23,8 @@ router.put('/:contactId', async (req, res, next) => {
   res.json({ message: 'template message' })
 })
 
-module.exports = router
+router.patch('/:contactId', async (req, res, next) => {
+  res.json({ message: 'template message' })
+})
+
+module.exports = router;

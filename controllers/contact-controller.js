@@ -1,7 +1,8 @@
-import * as contactsService from "../models/contacts.js";
+// import * as contactsService from "../models/contacts.js";
 import { HttpError } from "../helpers/index.js";
 import Contact from "../models/Contact.js";
-import { contactAddSchema, contactUpdateSchema } from "../models/Contact.js";
+import { ctrlWrapper } from "../decorators/index.js";
+// import { contactAddSchema, contactUpdateSchema } from "../models/Contact.js";
 
 const getAll = async (req, res, next) => {
     try {
@@ -107,12 +108,11 @@ const deleteById = async (req, res, next) => {
         next(error);
     }
 }
-
 export default {
-    getAll,
-    getById,
-    add,
-    updateById,
-    updateStatusContact, 
-    deleteById, 
+    getAll: ctrlWrapper(getAll),
+    getById: ctrlWrapper(getById),
+    add: ctrlWrapper(add),
+    updateById: ctrlWrapper(updateById),
+    updateStatusContact,
+    deleteById: ctrlWrapper(deleteById),
 }
