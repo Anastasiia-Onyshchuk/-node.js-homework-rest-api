@@ -2,7 +2,7 @@ import { HttpError } from "../helpers/index.js";
 import Contact from "../models/Contact.js";
 import { ctrlWrapper } from "../decorators/index.js";
 
-const getAll = async (res, next) => {
+const getAll = async (req, res, next) => {
     try {
         const result = await Contact.find();
 
